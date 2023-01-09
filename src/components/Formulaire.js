@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 
 const Formulaire = () => {
+    const [presta, setPresta] = useState({
+        clientName: "",
+        date: "",
+        observations: "pas d'observations",
+        tech: "",
+    })
+
+    const NewPresta = (e) => {
+        const copyPresta = { ...presta };
+        // copyPresta = e.target.value;
+        copyPresta.clientName = e.target.client.value;
+        copyPresta.date=e.target.date.value;
+        copyPresta.observations= e.target.comments.value;
+        copyPresta.tech=e.target.tech.value;
+
+        setPresta(
+            {
+                ...presta, copyPresta
+            }
+        )
+    }
+
     return (
         <div className="App">
             <Header />
@@ -13,8 +35,6 @@ const Formulaire = () => {
                         <input
                             type="text"
                             className="client"
-                        // onChange={(e) => setText(e.target.value)}
-                        // value={text}
                         />
                     </label>
 
@@ -22,31 +42,26 @@ const Formulaire = () => {
                         <input
                             type="date"
                             className="date"
-                        // onChange={(e) => setText(e.target.value)}
-                        // value={text}
                         />
                     </label>
                     <label> Observations :
                         <textarea
                             type="text"
                             className="comments"
-                        // onChange={(e) => setText(e.target.value)}
-                        // value={text}
                         />
                     </label>
                     <label> Nom du technicien :
                         <input
                             type="text"
                             className="tech"
-                        // onChange={(e) => setText(e.target.value)}
-                        // value={text}
                         />
                     </label>
 
                     <button
 
                         className="btn"
-                    // action={() => addTodo()}
+                        // onSubmit={(e) => NewPresta(e)}
+                        onClick={(e) => NewPresta(e)}
                     >
                         Enregistrer
                     </button>
