@@ -5,6 +5,7 @@ import {
     Route,
     Routes
 } from 'react-router-dom';
+import Formulaire from './components/Formulaire';
 
 
 const Root = () => {
@@ -12,6 +13,7 @@ const Root = () => {
         <Router>
             <Routes>
                 <Route exact path='/' element={<App/>}/>
+                <Route exact path='/formulaire' element={<Formulaire/>}/>
             </Routes>
 
         </Router>

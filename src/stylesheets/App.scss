@@ -8,12 +8,16 @@
   background-image: url("../img/background.jpg");
   background-size: cover;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 
   .header {
     background-color: $color-dark;
     height: 10vh;
     width: 100vw;
-    
+
 
     .logo {
       width: 15rem;
@@ -22,14 +26,55 @@
 
     }
   }
-  .main-background{
 
-  }
-  .footer{
+  .footer {
     background-color: $color-dark;
     height: 10vh;
     width: 100vw;
     position: absolute;
     bottom: 0;
+  }
+
+  .new-presta {
+    background-color: $color-contrast;
+    color: $color-light;
+    font-family: $font_main;
+    width: 80vw;
+    height: 40vh;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .form-group {
+    background-color: $color-light;
+    width: 80vw;
+    height: 60vh;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    padding: 2rem;
+      
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: center;
+      
+      input {
+        border: 2px $color-contrast solid;
+        border-radius: 1rem;
+      }
+
+      label {
+        font-family: $font_main;
+      }
+    }
+
+
+
+
   }
 }
