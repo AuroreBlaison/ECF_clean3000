@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header isHome={true}/>
       <NewPresta />
       <Footer />
     </div>
